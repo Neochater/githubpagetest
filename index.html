@@ -363,18 +363,6 @@ body {
   padding: 0 1rem;
 }
 
-.social-icons a {
-  color: var(--primary);
-  font-size: 1.8rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 /* Update the about-links class */
 .about-links {
   display: grid;
@@ -415,35 +403,6 @@ body {
   border-radius: 50%;
 }
 
-/* Update responsive breakpoints */
-@media (max-width: 768px) {
-  .social-icons {
-    grid-template-columns: repeat(3, 1fr); /* 3 icons per row on medium screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .social-icons {
-    grid-template-columns: repeat(2, 1fr); /* 2 icons per row on small screens */
-  }
-}
-
-.social-icons a {
-  color: var(--primary);
-  font-size: 1.8rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-}
-
-.social-icons a {
-  color: var(--primary);
-  font-size: 1.8rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-}
-
 .social-icons a:hover {
   color: var(--secondary);
   transform: translateY(-3px);
@@ -453,7 +412,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  margin-top: 1.5rem;
 }
 
 .about-link {
@@ -480,7 +438,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Add this to existing .about-badges class styles if needed */
+/* Add this to existing .about-badges class styles */
 .about-badges {
   display: flex;
   flex-wrap: wrap;
@@ -1068,9 +1026,8 @@ body {
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex; 
-  flex-direction: column; 
   align-items: center; 
-  justify-content: center; 
+  gap: 1rem; 
 }
 
 .achievement-card:hover {
@@ -1081,18 +1038,14 @@ body {
 
 .achievement-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  text-align: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .achievement-icon {
   font-size: 1.5rem;
   color: var(--primary);
-  display: flex; /* Add this */
-  justify-content: center; /* Add this */
-  align-items: center; /* Add this */
 }
 
 .achievement-title {
@@ -1100,21 +1053,14 @@ body {
   color: var(--secondary);
   font-weight: 600;
   margin: 0;
-  text-align: center; /* Add this */
 }
 
-.achievement-stats {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+/* Update the grid layout to match software grid */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
-
-.achievement-description {
-  font-size: 0.85rem;
-  color: #555;
-  line-height: 1.4;
-}
-
 @media (max-width: 900px) {
   .achievement-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1214,6 +1160,70 @@ body {
   .threed-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.achievement-card .fab.fa-html5 {
+  color: #E44D26;
+}
+
+.achievement-card .fab.fa-css3-alt {
+  color: #264DE4;
+}
+
+.achievement-card .fab.fa-js {
+  color: #F7DF1E;
+}
+
+.achievement-card .fab.fa-python {
+  color: #3776AB;
+}
+
+.achievement-card .fab.fa-java {
+  color: #007396;
+}
+
+.achievement-card .fab.fa-php {
+  color: #777BB4;
+}
+
+.achievement-card .fas.fa-gem {
+  color: #CC342D;
+}
+
+.achievement-card .fab.fa-windows {
+  color: #00A4EF;
+}
+
+.achievement-card .fas.fa-plus-circle {
+  color: #00599C;
+}
+
+.achievement-card .fab.fa-js-square {
+  color: #3178C6;
+}
+
+.achievement-card .fas.fa-database {
+  color: #4479A1;
+}
+
+.achievement-card .fab.fa-apple {
+  color: #000000;
+}
+
+.achievement-card .fas.fa-cloud {
+  color: #00ADD8;
+}
+
+.achievement-card .fab.fa-android {
+  color: #3DDC84;
+}
+
+.achievement-card .fas.fa-cogs {
+  color: #000000;
+}
+
+.achievement-card .fas.fa-terminal {
+  color: #4EAA25;
 }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1683,6 +1693,108 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  const networkDescriptions = {
+    'Diseño de Red': {
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8',
+      description: 'Diseño e implementación de infraestructuras de red empresariales. Experiencia en topologías LAN/WAN, enrutamiento, switching y optimización del rendimiento de la red. Certificaciones en Cisco CCNA y CCNP.'
+    },
+    'Seguridad': {
+      image: 'https://images.unsplash.com/photo-1555066931-bf19f8fd1085',
+      description: 'Implementación de soluciones de seguridad empresarial incluyendo firewalls, IDS/IPS, VPNs y políticas de seguridad. Experiencia en análisis de vulnerabilidades y respuesta a incidentes.'
+    },
+    'Servidores': {
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
+      description: 'Administración de servidores Linux y Windows Server. Configuración y mantenimiento de servicios como Active Directory, DNS, DHCP, y servicios web. Experiencia en virtualización con VMware y Hyper-V.'
+    },
+    'Cloud': {
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa',
+      description: 'Gestión de infraestructuras cloud en AWS, Azure y Google Cloud. Implementación de arquitecturas serverless, contenedores y servicios PaaS. Optimización de costes y rendimiento en la nube.'
+    },
+    'Redes Wi-Fi': {
+      image: 'https://images.unsplash.com/photo-1592770108625-15c2d4aa56b6',
+      description: 'Diseño e implementación de redes inalámbricas empresariales. Experiencia en site surveys, optimización de cobertura y resolución de problemas de interferencia. Certificación en Wireless Networks.'
+    },
+    'Enrutamiento': {
+      image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8',
+      description: 'Configuración avanzada de protocolos de enrutamiento como OSPF, BGP y EIGRP. Optimización de rutas y balanceo de carga. Diseño de políticas de enrutamiento empresarial.'
+    },
+    'VLANs': {
+      image: 'https://images.unsplash.com/photo-1488229297570-58520851e868',
+      description: 'Implementación de redes virtuales para segmentación y optimización del tráfico. Configuración de trunk ports, VTP y spanning tree. Diseño de arquitecturas VLAN empresariales.'
+    },
+    'VPN': {
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c',
+      description: 'Configuración de soluciones VPN site-to-site y cliente-servidor. Implementación de protocolos IPSec, SSL/TLS y OpenVPN. Gestión de certificados y políticas de acceso remoto.'
+    }
+  };
+
+  document.querySelectorAll('.network-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const networkName = this.querySelector('h3').textContent;
+      const networkInfo = networkDescriptions[networkName];
+      
+      if (networkInfo) {
+        modalTitle.textContent = networkName;
+        modalImage.src = networkInfo.image;
+        modalImage.alt = `Ilustración de ${networkName}`;
+        modalDescription.textContent = networkInfo.description;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const threedDescriptions = {
+    'Modelado': {
+      image: 'https://images.unsplash.com/photo-1617791160505-6f00504e3519',
+      description: 'Especializado en modelado 3D orgánico e inorgánico usando herramientas como Maya, 3ds Max, Blender y ZBrush. Experiencia en topología limpia y optimización de mallas para diferentes industrias.'
+    },
+    'Animación': {
+      image: 'https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae',
+      description: 'Creación de animaciones 3D para personajes y objetos, incluyendo rigging, skinning y motion capture. Experiencia en Maya, Motion Builder y Blender.'
+    },
+    'Texturizado': {
+      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe',
+      description: 'Creación de materiales y texturas PBR usando Substance Painter/Designer, Mari y Photoshop. Especializado en texturizado fotorrealista y estilizado.'
+    },
+    'Iluminación': {
+      image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead',
+      description: 'Configuración de iluminación y renderizado usando V-Ray, Arnold y Redshift. Experiencia en iluminación de estudio y exteriors.'
+    },
+    'Realidad Virtual': {
+      image: 'https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae',
+      description: 'Desarrollo de experiencias VR/AR usando Unity y Unreal Engine. Optimización de assets para plataformas VR.'
+    },
+    'Videojuegos': {
+      image: 'https://images.unsplash.com/photo-1616499615673-c11cfb4dfa81',
+      description: 'Creación de assets y entornos 3D para videojuegos. Experiencia en optimización de modelos y LODs.'
+    },
+    'CAD': {
+      image: 'https://images.unsplash.com/photo-1617791160505-6f00504e3519',
+      description: 'Diseño técnico y arquitectónico usando AutoCAD, Revit y SolidWorks. Experiencia en modelado paramétrico y documentación técnica.'
+    },
+    'Impresión 3D': {
+      image: 'https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae',
+      description: 'Preparación de modelos para impresión 3D, incluyendo optimización de mallas, soportes y configuración de impresión.'
+    }
+  };
+
+  document.querySelectorAll('.threed-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const threeDName = this.querySelector('h3').textContent;
+      const threeDInfo = threedDescriptions[threeDName];
+      
+      if (threeDInfo) {
+        modalTitle.textContent = threeDName;
+        modalImage.src = threeDInfo.image;
+        modalImage.alt = `Ilustración de ${threeDName}`;
+        modalDescription.textContent = threeDInfo.description;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
 });
 </script>
 <body>
@@ -1704,7 +1816,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <li><a href="#software">Software</a></li>
       <li><a href="#code">Código</a></li>
       <li><a href="#networks">Redes</a></li>
-      <li><a href="#3d">3D</a></li>
+      <li><a href="#threed">3D</a></li>
       <li><a href="#contact">Contacto</a></li>
     </ul>
   </nav>
@@ -1721,8 +1833,9 @@ document.addEventListener('DOMContentLoaded', function() {
           </linearGradient>
         </defs>
         <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
-        <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
+        <text x="50" y="40" text-anchor="middle" dominant-baseline="middle" 
               font-family="Poppins" font-size="30" fill="url(#logoGradient)">EJLP</text>
+        <path d="M35,65 Q50,75 65,65" stroke="url(#logoGradient)" fill="none" stroke-width="2"/>
       </svg>
       <h1>Enrique José López Prim</h1>
       <p>Técnico en Sistemas Microinformáticos y Redes</p>
@@ -1787,75 +1900,26 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="social-icons">
-          <a href="https://github.com/elopezprim" aria-label="GitHub Profile">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://dribbble.com/elopezprim" aria-label="Dribbble Profile">
-            <i class="fab fa-dribbble"></i>
-          </a>
-          <a href="https://behance.net/elopezprim" aria-label="Behance Profile">
-            <i class="fab fa-behance"></i>
-          </a>
-          <a href="https://stackoverflow.com/users/elopezprim" aria-label="Stack Overflow Profile">
-            <i class="fab fa-stack-overflow"></i>
-          </a>
-          <a href="https://codepen.io/elopezprim" aria-label="CodePen Profile">
-            <i class="fab fa-codepen"></i>
-          </a>
-          <a href="https://reddit.com/user/elopezprim" aria-label="Reddit Profile">
-            <i class="fab fa-reddit"></i>
-          </a>
-          <a href="https://dev.to/elopezprim" aria-label="Dev.to Profile">
-            <i class="fab fa-dev"></i>
-          </a>
-          <a href="https://linkedin.com/in/elopezprim" aria-label="LinkedIn Profile">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://kaggle.com/elopezprim" aria-label="Kaggle Profile">
-            <i class="fab fa-kaggle"></i>
-          </a>
-          <a href="https://designerhangout.slack.com" aria-label="Designer Hangout Slack">
-            <i class="fab fa-slack"></i>
-          </a>
-          <a href="https://artstation.com/elopezprim" aria-label="ArtStation Profile">
-            <i class="fab fa-artstation"></i>
-          </a>
-          <a href="https://medium.com/@elopezprim" aria-label="Medium Profile">
-            <i class="fab fa-medium"></i>
-          </a>
-          
-          <a href="https://facebook.com/elopezprim" aria-label="Facebook Profile">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://instagram.com/elopezprim" aria-label="Instagram Profile">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://twitter.com/elopezprim" aria-label="Twitter Profile">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="https://wa.me/1234567890" aria-label="WhatsApp Contact">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://www.renderosity.com/users/elopezprim" aria-label="Renderosity Profile">
-            <i class="fas fa-cube"></i>
-          </a>
-          <a href="https://www.therookies.co/u/elopezprim" aria-label="The Rookies Profile">
-            <i class="fas fa-star"></i>
-          </a>
+          <a href="https://github.com/enriquelprim" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/enriquelprim" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://twitter.com/enriquelprim" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/enriquelprim" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:contacto@enriquelprim.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://discord.gg/enriquelprim" target="_blank"><i class="fab fa-discord"></i></a>
         </div>
 
         <div class="about-links">
-          <a href="https://drive.google.com/file/d/123456/view" class="about-link">
-            <i class="fas fa-file-pdf"></i>
+          <a href="#contact" class="about-link">
+            <i class="fas fa-envelope"></i>
+            Contactar
+          </a>
+          <a href="cv-enriquelprim.pdf" class="about-link" download>
+            <i class="fas fa-file-download"></i>
             Descargar CV
           </a>
-          <a href="https://github.com/elopezprim" class="about-link">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-          <a href="mailto:contacto@enriquelopez.dev" class="about-link">
-            <i class="fas fa-envelope"></i>
-            Email
+          <a href="https://calendly.com/enriquelprim" class="about-link" target="_blank">
+            <i class="fas fa-calendar-alt"></i>
+            Agendar Reunión
           </a>
         </div>
       </div>
@@ -1867,10 +1931,10 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Proyectos Destacados</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5" alt="Interfaz de control de hogar inteligente con dashboard mostrando diferentes dispositivos y estadísticas">
+          <img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5" alt="Smart Home Dashboard mostrando controles de IoT">
           <div class="project-content">
             <h3>Smart Home IoT</h3>
-            <p>Plataforma de control domótico con integración IoT y análisis en tiempo real.</p>
+            <p>Plataforma de domótica con dashboard en tiempo real y control remoto de dispositivos.</p>
             <div class="project-tags">
               <span class="tag">React</span>
               <span class="tag">Node.js</span>
@@ -1880,36 +1944,36 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Dashboard de CRM mostrando análisis de ventas y métricas de clientes">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Dashboard de CRM con gráficos de ventas">
           <div class="project-content">
             <h3>CRM Platform</h3>
-            <p>Sistema de gestión de relaciones con clientes con análisis avanzado.</p>
+            <p>Sistema CRM completo con gestión de clientes, pipeline de ventas y analíticas.</p>
             <div class="project-tags">
+              <span class="tag">PHP</span>
               <span class="tag">Laravel</span>
-              <span class="tag">Vue.js</span>
               <span class="tag">MySQL</span>
             </div>
           </div>
         </div>
 
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="Sistema de gestión de recursos humanos mostrando perfiles de empleados y estadísticas">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="Sistema de gestión de RRHH">
           <div class="project-content">
             <h3>HR Management System</h3>
-            <p>Plataforma integral para gestión de recursos humanos.</p>
+            <p>Sistema integral de recursos humanos con módulos de reclutamiento y evaluación.</p>
             <div class="project-tags">
               <span class="tag">Django</span>
-              <span class="tag">PostgreSQL</span>
               <span class="tag">Vue.js</span>
+              <span class="tag">PostgreSQL</span>
             </div>
           </div>
         </div>
 
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Dashboard de análisis en tiempo real con gráficos interactivos">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Dashboard de análisis en tiempo real">
           <div class="project-content">
             <h3>Real-time Analytics</h3>
-            <p>Dashboard de análisis en tiempo real con visualizaciones D3.js.</p>
+            <p>Dashboard de análisis en tiempo real con visualizaciones interactivas.</p>
             <div class="project-tags">
               <span class="tag">Node.js</span>
               <span class="tag">Socket.io</span>
@@ -1919,10 +1983,10 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870" alt="Plataforma de streaming mostrando interfaz de usuario y controles de reproducción">
+          <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870" alt="Plataforma de streaming de video">
           <div class="project-content">
             <h3>Streaming Platform</h3>
-            <p>Plataforma de streaming multimedia con recomendaciones.</p>
+            <p>Plataforma de streaming con sistema de recomendaciones personalizado.</p>
             <div class="project-tags">
               <span class="tag">WebRTC</span>
               <span class="tag">React</span>
@@ -1932,7 +1996,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" alt="Sistema de gestión de inventario mostrando stock y estadísticas">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" alt="Sistema de gestión de inventario">
           <div class="project-content">
             <h3>Inventory Management</h3>
             <p>Sistema de gestión de inventario con tracking en tiempo real.</p>
@@ -1943,6 +2007,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -1952,100 +2017,107 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Habilidades Técnicas</h2>
       <div class="skills-grid">
         <div class="skill-bar">
-          <h3>HTML5/CSS3 <span>95%</span></h3>
+          <h3>HTML5/CSS3 <small>95%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 95%"></div>
           </div>
         </div>
         
         <div class="skill-bar">
-          <h3>JavaScript/TypeScript <span>90%</span></h3>
+          <h3>JavaScript/TypeScript <small>90%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 90%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>React <span>85%</span></h3>
+          <h3>React <small>85%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 85%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>Angular <span>80%</span></h3>
+          <h3>Angular <small>80%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 80%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>Vue <span>75%</span></h3>
+          <h3>Vue <small>75%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 75%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>PHP/Laravel <span>85%</span></h3>
+          <h3>PHP/Laravel <small>85%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 85%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>Node.js/Express <span>80%</span></h3>
+          <h3>Node.js/Express <small>80%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 80%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>Python/Django <span>75%</span></h3>
+          <h3>Python/Django <small>75%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 75%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>SQL/NoSQL <span>85%</span></h3>
+          <h3>SQL/NoSQL <small>85%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 85%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>AWS/Azure <span>75%</span></h3>
+          <h3>AWS/Azure <small>80%</small></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Docker/Kubernetes <small>75%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 75%"></div>
           </div>
         </div>
 
         <div class="skill-bar">
-          <h3>Docker/Kubernetes <span>70%</span></h3>
+          <h3>CI/CD <small>80%</small></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Git/Version Control <small>90%</small></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>UI/UX Design <small>85%</small></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Assembly <small>70%</small></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 70%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>CI/CD <span>75%</span></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 75%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>Git/Version Control <span>90%</span></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>UI/UX Design <span>80%</span></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%"></div>
           </div>
         </div>
       </div>
@@ -2055,12 +2127,12 @@ document.addEventListener('DOMContentLoaded', function() {
   <section id="software" class="software">
     <div class="software-container">
       <h2>Software y Herramientas</h2>
-      <div class="skills-grid">
+      <div class="software-grid">
         <div class="software-item">
           <i class="fas fa-code software-icon"></i>
           <div class="software-info">
             <h3>Visual Studio Code</h3>
-            <p>Editor principal</p>
+            <p>Editor principal de código</p>
           </div>
         </div>
 
@@ -2068,7 +2140,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-palette software-icon"></i>
           <div class="software-info">
             <h3>Adobe Creative Suite</h3>
-            <p>Diseño gráfico</p>
+            <p>Diseño y edición multimedia</p>
           </div>
         </div>
 
@@ -2076,7 +2148,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-database software-icon"></i>
           <div class="software-info">
             <h3>MySQL Workbench</h3>
-            <p>Gestión BD</p>
+            <p>Gestión de bases de datos</p>
           </div>
         </div>
 
@@ -2089,7 +2161,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fas fa-code-branch software-icon"></i>
+          <i class="fab fa-git-alt software-icon"></i>
           <div class="software-info">
             <h3>GitKraken</h3>
             <p>Control de versiones</p>
@@ -2100,7 +2172,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-paper-plane software-icon"></i>
           <div class="software-info">
             <h3>Postman</h3>
-            <p>Testing API</p>
+            <p>Testing de APIs</p>
           </div>
         </div>
 
@@ -2108,7 +2180,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-docker software-icon"></i>
           <div class="software-info">
             <h3>Docker Desktop</h3>
-            <p>Contenedores</p>
+            <p>Containerización</p>
           </div>
         </div>
 
@@ -2124,7 +2196,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-chrome software-icon"></i>
           <div class="software-info">
             <h3>Chrome DevTools</h3>
-            <p>Debugging</p>
+            <p>Debugging web</p>
           </div>
         </div>
 
@@ -2132,20 +2204,20 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-pencil-ruler software-icon"></i>
           <div class="software-info">
             <h3>Sketch</h3>
-            <p>Diseño UI</p>
+            <p>Diseño de interfaces</p>
           </div>
         </div>
 
         <div class="software-item">
-          <i class="fas fa-leaf software-icon"></i>
+          <i class="fas fa-database software-icon"></i>
           <div class="software-info">
             <h3>MongoDB Compass</h3>
-            <p>NoSQL DB</p>
+            <p>Base de datos NoSQL</p>
           </div>
         </div>
 
         <div class="software-item">
-          <i class="fas fa-file-code software-icon"></i>
+          <i class="fas fa-edit software-icon"></i>
           <div class="software-info">
             <h3>Sublime Text</h3>
             <p>Editor secundario</p>
@@ -2157,148 +2229,116 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="code" class="code-achievements">
     <div class="code-achievements-container">
-      <h2>Código</h2>
+      <h2>Experiencia en Código</h2>
       <div class="achievement-grid">
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-code"></i>
-            </div>
+            <i class="fab fa-html5 achievement-icon"></i>
             <h3 class="achievement-title">HTML</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-css3"></i>
-            </div>
+            <i class="fab fa-css3-alt achievement-icon"></i>
             <h3 class="achievement-title">CSS</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-js"></i>
-            </div>
+            <i class="fab fa-js achievement-icon"></i>
             <h3 class="achievement-title">JavaScript</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-python"></i>
-            </div>
+            <i class="fab fa-python achievement-icon"></i>
             <h3 class="achievement-title">Python</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-java"></i>
-            </div>
+            <i class="fab fa-java achievement-icon"></i>
             <h3 class="achievement-title">Java</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-php"></i>
-            </div>
+            <i class="fab fa-php achievement-icon"></i>
             <h3 class="achievement-title">PHP</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-gem"></i>
-            </div>
+            <i class="fas fa-gem achievement-icon"></i>
             <h3 class="achievement-title">Ruby</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-windows"></i>
-            </div>
+            <i class="fab fa-windows achievement-icon"></i>
             <h3 class="achievement-title">C#</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-plus-circle"></i>
-            </div>
+            <i class="fas fa-plus-circle achievement-icon"></i>
             <h3 class="achievement-title">C++</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-js-square"></i>
-            </div>
+            <i class="fab fa-js-square achievement-icon"></i>
             <h3 class="achievement-title">TypeScript</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-database"></i>
-            </div>
+            <i class="fas fa-database achievement-icon"></i>
             <h3 class="achievement-title">SQL</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-apple"></i>
-            </div>
+            <i class="fab fa-apple achievement-icon"></i>
             <h3 class="achievement-title">Swift</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-running"></i>
-            </div>
+            <i class="fas fa-cloud achievement-icon"></i>
             <h3 class="achievement-title">Go</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fab fa-android"></i>
-            </div>
+            <i class="fab fa-android achievement-icon"></i>
             <h3 class="achievement-title">Kotlin</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-cog"></i>
-            </div>
+            <i class="fas fa-cogs achievement-icon"></i>
             <h3 class="achievement-title">Rust</h3>
           </div>
         </div>
 
         <div class="achievement-card">
           <div class="achievement-header">
-            <div class="achievement-icon">
-              <i class="fas fa-terminal"></i>
-            </div>
+            <i class="fas fa-terminal achievement-icon"></i>
             <h3 class="achievement-title">Bash</h3>
           </div>
         </div>
@@ -2308,141 +2348,141 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="networks" class="networks">
     <div class="networks-container">
-      <h2>Infraestructura y Redes</h2>
+      <h2>Experiencia en Redes</h2>
       <div class="networks-grid">
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-network-wired network-icon"></i>
-            <h3>Redes LAN/WAN</h3>
+            <i class="fas fa-network-wired"></i>
+            <h3>Diseño de Red</h3>
           </div>
-          <p class="network-description">Diseño e implementación de redes empresariales, configuración de switches y routers.</p>
+          <p class="network-description">Diseño e implementación de infraestructuras</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-wifi network-icon"></i>
-            <h3>Redes Inalámbricas</h3>
+            <i class="fas fa-shield-alt"></i>
+            <h3>Seguridad</h3>
           </div>
-          <p class="network-description">Configuración y optimización de redes WiFi empresariales.</p>
+          <p class="network-description">Protección y monitorización de redes</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-phone-alt network-icon"></i>
-            <h3>VoIP</h3>
+            <i class="fas fa-server"></i>
+            <h3>Servidores</h3>
           </div>
-          <p class="network-description">Implementación de sistemas de telefonía IP y comunicaciones unificadas.</p>
+          <p class="network-description">Gestión y mantenimiento de servidores</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-chart-line network-icon"></i>
-            <h3>Monitorización</h3>
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud</h3>
           </div>
-          <p class="network-description">Sistemas de monitoreo de red y análisis de rendimiento.</p>
+          <p class="network-description">Servicios en la nube e infraestructura</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-sitemap network-icon"></i>
-            <h3>VLAN y Routing</h3>
+            <i class="fas fa-wifi"></i>
+            <h3>Redes Wi-Fi</h3>
           </div>
-          <p class="network-description">Configuración de VLANs y protocolos de enrutamiento.</p>
+          <p class="network-description">Implementación de redes inalámbricas</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-shield-alt network-icon"></i>
-            <h3>Seguridad de Red</h3>
+            <i class="fas fa-route"></i>
+            <h3>Enrutamiento</h3>
           </div>
-          <p class="network-description">Implementación de firewalls, VPNs y políticas de seguridad.</p>
+          <p class="network-description">Configuración y optimización de rutas</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-server network-icon"></i>
-            <h3>Administración de Servidores</h3>
+            <i class="fas fa-project-diagram"></i>
+            <h3>VLANs</h3>
           </div>
-          <p class="network-description">Gestión de servidores Linux y Windows, virtualización.</p>
+          <p class="network-description">Segmentación y gestión de redes virtuales</p>
         </div>
 
         <div class="network-card">
           <div class="network-header">
-            <i class="fas fa-cloud network-icon"></i>
-            <h3>Cloud Computing</h3>
+            <i class="fas fa-lock"></i>
+            <h3>VPN</h3>
           </div>
-          <p class="network-description">Implementación y gestión de servicios en AWS y Azure.</p>
+          <p class="network-description">Redes privadas virtuales y túneles seguros</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="3d" class="threed">
+  <section id="threed" class="threed">
     <div class="threed-container">
-      <h2>Diseño 3D y CAD</h2>
+      <h2>Experiencia en 3D</h2>
       <div class="threed-grid">
         <div class="threed-card">
           <div class="threed-header">
-            <i class="fas fa-cube threed-icon"></i>
-            <h3>Modelado 3D</h3>
+            <i class="fas fa-cube"></i>
+            <h3>Modelado</h3>
           </div>
-          <p class="threed-description">Diseño de modelos 3D con Blender y Maya.</p>
+          <p class="threed-description">Creación de modelos 3D</p>
         </div>
 
         <div class="threed-card">
           <div class="threed-header">
-            <i class="fas fa-vr-cardboard threed-icon"></i>
-            <h3>Realidad Virtual</h3>
-          </div>
-          <p class="threed-description">Desarrollo de experiencias VR y modelos 3D interactivos.</p>
-        </div>
-
-        <div class="threed-card">
-          <div class="threed-header">
-            <i class="fas fa-print threed-icon"></i>
-            <h3>Impresión 3D</h3>
-          </div>
-          <p class="threed-description">Preparación de modelos para fabricación aditiva.</p>
-        </div>
-
-        <div class="threed-card">
-          <div class="threed-header">
-            <i class="fas fa-lightbulb threed-icon"></i>
-            <h3>Iluminación 3D</h3>
-          </div>
-          <p class="threed-description">Configuración de iluminación y renderizado fotorrealista.</p>
-        </div>
-
-        <div class="threed-card">
-          <div class="threed-header">
-            <i class="fas fa-camera threed-icon"></i>
-            <h3>Fotogrametría</h3>
-          </div>
-          <p class="threed-description">Creación de modelos 3D a partir de fotografías.</p>
-        </div>
-
-        <div class="threed-card">
-          <div class="threed-header">
-            <i class="fas fa-drafting-compass threed-icon"></i>
-            <h3>CAD</h3>
-          </div>
-          <p class="threed-description">Diseño técnico con AutoCAD y SolidWorks.</p>
-        </div>
-
-        <div class="threed-card">
-          <div class="threed-header">
-            <i class="fas fa-paint-brush threed-icon"></i>
-            <h3>Texturizado</h3>
-          </div>
-          <p class="threed-description">Creación de texturas y materiales realistas.</p>
-        </div>
-
-        <div class="threed-card">
-          <div class="threed-header">
-            <i class="fas fa-film threed-icon"></i>
+            <i class="fas fa-film"></i>
             <h3>Animación</h3>
           </div>
-          <p class="threed-description">Animación 3D y efectos visuales.</p>
+          <p class="threed-description">Animación de personajes y objetos</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-palette"></i>
+            <h3>Texturizado</h3>
+          </div>
+          <p class="threed-description">Materiales y texturas realistas</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Iluminación</h3>
+          </div>
+          <p class="threed-description">Configuración de luces y renderizado</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-vr-cardboard"></i>
+            <h3>Realidad Virtual</h3>
+          </div>
+          <p class="threed-description">Desarrollo VR/AR</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-gamepad"></i>
+            <h3>Videojuegos</h3>
+          </div>
+          <p class="threed-description">Assets y entornos 3D</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-drafting-compass"></i>
+            <h3>CAD</h3>
+          </div>
+          <p class="threed-description">Diseño técnico y arquitectónico</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-print"></i>
+            <h3>Impresión 3D</h3>
+          </div>
+          <p class="threed-description">Preparación de modelos para impresión</p>
         </div>
       </div>
     </div>
@@ -2450,7 +2490,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="contact" class="contact">
     <div class="contact-container">
-      <h2>Contacto</h2>
+      <h2>¿En que puedo ayudarle?</h2>
       <form class="contact-form">
         <div class="form-group">
           <input type="text" id="name" placeholder="Nombre" required>
@@ -2470,6 +2510,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
   <footer class="footer">
-    <p>&copy; 2023 Enrique López · <span class="version">v2.1.0</span></p>
+    <p>&copy; 2024 Enrique José López Prim. Todos los derechos reservados. <span class="version">v2.1.0</span></p>
   </footer>
-</body></html>
+</body>
+</html>
