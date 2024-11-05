@@ -1,1 +1,2475 @@
-<h1>GitHubPages Test</h1>
+<html><head><base href="." /><style>
+:root {
+  --primary: #2a9d8f;
+  --secondary: #264653;
+  --accent: #e9c46a;
+  --text: #333;
+  --light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  height: 100vh;
+  position: relative;
+  padding: 5rem 2rem;
+  background: linear-gradient(45deg, var(--secondary), var(--primary));
+  overflow: hidden;
+  display: flex;           
+  justify-content: center; 
+  align-items: center;     
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 0h100v100H0z'/%3E%3Cpath d='M10 10h10v10H10zM30 10h10v10H30zM50 10h10v10H50zM70 10h10v10H70zM90 10h10v10H90zM20 20h10v10H20zM40 20h10v10H40zM60 20h10v10H60zM80 20h10v10H80zM10 30h10v10H10z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+  animation: backgroundMove 15s linear infinite;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto; 
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 2rem;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.header-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #fff, #e9c46a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.header-btn {
+  padding: 1rem 2rem;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.header-btn.primary {
+  background: white;
+  color: var(--primary);
+}
+
+.header-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: particleFloat 15s infinite linear;
+}
+
+/* Floating elements */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  animation: floatCloud 15s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 50px;
+  height: 50px;
+  top: -20px;
+  left: 10px;
+}
+
+.cloud::after {
+  width: 30px;
+  height: 30px;
+  top: -10px;
+  left: 40px;
+}
+
+.special-char {
+  position: absolute;
+  color: var(--accent);
+  font-size: 24px;
+  animation: flyChar 20s linear infinite;
+  opacity: 0;
+  font-family: monospace; /* Better for code symbols */
+}
+
+@keyframes flyChar {
+  0% {
+    transform: translate(100vw, 0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100px, 0) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatCloud {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  padding: 1rem;
+  z-index: 100;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+  gap: 0.5rem; /* Add gap between items */
+  padding: 0 1rem;
+}
+
+.nav a {
+  color: var(--secondary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0;  /* Remove margin and use gap instead */
+  transition: all 0.3s;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav a.active {
+  color: var(--primary); /* Keep the green color */
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a.active::after {
+  display: none; /* Alternative way to hide the underline */
+}
+
+/* Add responsive breakpoints for nav */
+@media (max-width: 768px) {
+  .social-icons {
+    grid-template-columns: repeat(4, 1fr); /* 4 icons per row on medium screens */
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row on small screens */
+    gap: 0.6rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row on small screens */
+    gap: 0.6rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav ul {
+    gap: 0.3rem;
+  }
+
+  .nav a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Cookie Notice */
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 1000;
+  animation: slideUp 0.5s ease-out;
+}
+
+/* About Section */
+.about {
+  padding: 5rem 2rem;
+}
+
+.profile-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 0;  
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-image-border {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: 10px;
+  bottom: 10px;
+  border: 3px solid var(--primary);
+}
+
+.about-content {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;  
+  max-width: 1200px;  
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 icons per row by default */
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.social-icons a {
+  color: var(--primary);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Update the about-links class */
+.about-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    grid-template-columns: repeat(4, 1fr); /* 4 icons per row on medium screens */
+    gap: 0.8rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row on small screens */
+    gap: 0.6rem;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+}
+
+/* Social icon styles */
+.social-icons a {
+  color: var(--primary);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* Update responsive breakpoints */
+@media (max-width: 768px) {
+  .social-icons {
+    grid-template-columns: repeat(3, 1fr); /* 3 icons per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons {
+    grid-template-columns: repeat(2, 1fr); /* 2 icons per row on small screens */
+  }
+}
+
+.social-icons a {
+  color: var(--primary);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.social-icons a {
+  color: var(--primary);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.about-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-link i {
+  font-size: 1.1rem;
+}
+
+.about-link:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Add this to existing .about-badges class styles if needed */
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.badge {
+  background: rgba(42, 157, 143, 0.1);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem; /* Reduced padding */
+  border-radius: 16px; /* Slightly reduced radius */
+  font-size: 0.8rem; /* Reduced font size */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Projects Grid */
+.projects {
+  padding: 6rem 2rem;
+  background: var(--light);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.projects h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  height: 420px;  /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer; /* Add this line */
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;  /* Fixed height for images */
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between; /* This ensures proper spacing */
+}
+
+.project-content h3 {
+  color: var(--secondary);
+  font-size: 1.2rem;         /* Reduced from 1.4rem */
+  margin-bottom: 0.5rem;     /* Reduced from 0.8rem */
+  font-weight: 600;
+  line-height: 1.3;         /* Added for better text spacing */
+}
+
+.project-content p {
+  color: #666;
+  font-size: 0.85rem;      /* Reduced from 0.95rem */
+  line-height: 1.5;        /* Adjusted from 1.6 */
+  margin-bottom: 0.75rem;  /* Reduced from 1rem */
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.tag {
+  background: rgba(42, 157, 143, 0.1);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem; /* Reduced padding */
+  border-radius: 16px; /* Slightly reduced radius */
+  font-size: 0.8rem; /* Reduced font size */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Add responsive breakpoints */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-content {
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+}
+
+.modal-header h2 {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.modal-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.modal-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  white-space: pre-line;
+}
+
+.modal-tech {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.modal-tech h3 {
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .projects h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Skills Section */
+.skills {
+  padding: 5rem 2rem;
+  background: var(--light);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  font-size: 2.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-bar {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-bar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.progress {
+  height: 8px;  
+  background: rgba(42, 157, 143, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease;
+  background: linear-gradient(to right, #2a9d8f, #264653);
+}
+
+.progress-bar[style*="width: 9"] {
+  background: linear-gradient(to right, #2a9d8f, #219582);
+}
+
+.progress-bar[style*="width: 8"] {
+  background: linear-gradient(to right, #219582, #1b8575);
+}
+
+.progress-bar[style*="width: 7"] {
+  background: linear-gradient(to right, #1b8575, #157568);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills {
+    padding: 3rem 1rem;
+  }
+
+  .skills-container {
+    padding: 1.5rem;
+  }
+
+  .skills h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Contact Form */
+.contact {
+  padding: 5rem 2rem;
+  background: var(--light);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact h2 {
+  text-align: center;
+  color: var(--secondary);
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  background: var(--secondary);
+}
+
+/* Footer */
+.footer {
+  background: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Add this CSS */
+.footer .version {
+  color: var(--accent);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  animation: modalFadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: modalSlideIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+.modal-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.modal-description {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.software {
+  padding: 5rem 2rem;
+  background: var(--light);
+}
+
+.software-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.software h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  font-size: 2.5rem;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  overflow: visible;  /* Remove horizontal scroll */
+}
+
+.software-item {
+  cursor: pointer;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.software-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.software-icon {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.software-info h3 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.software-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .about-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .profile-image-container {
+    margin: 0 auto 2rem auto;
+  }
+
+  .about-content {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .about-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .profile-image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+  }
+
+  .about-links {
+    grid-template-columns: 1fr;
+  }
+
+  .about-badges {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-image-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Code Achievements Section */
+.code-achievements {
+  padding: 5rem 2rem;
+  background: var(--light);
+}
+
+.code-achievements-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.code-achievements h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  font-size: 2.5rem;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 100%;
+}
+
+.achievement-card {
+  background: rgba(42, 157, 143, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.achievement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: rgba(42, 157, 143, 0.15);
+}
+
+.achievement-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.achievement-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  display: flex; /* Add this */
+  justify-content: center; /* Add this */
+  align-items: center; /* Add this */
+}
+
+.achievement-title {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  font-weight: 600;
+  margin: 0;
+  text-align: center; /* Add this */
+}
+
+.achievement-stats {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-description {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.networks {
+  padding: 5rem 2rem;
+  background: var(--light);
+}
+
+.networks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.networks-container h2,
+.threed-container h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  font-size: 2.5rem;
+}
+
+.networks-grid,
+.threed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.network-card,
+.threed-card {
+  background: rgba(42, 157, 143, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.network-card:hover,
+.threed-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: rgba(42, 157, 143, 0.15);
+}
+
+.network-header,
+.threed-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.network-icon,
+.threed-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.network-description,
+.threed-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* 3D Section */
+.threed {
+  padding: 5rem 2rem;
+  background: var(--light);
+}
+
+.threed-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 900px) {
+  .networks-grid,
+  .threed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cookieNotice = document.getElementById('cookie-notice');
+
+  window.acceptCookies = function() {
+    if (cookieNotice) {
+      cookieNotice.style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+  };
+
+  setTimeout(() => {
+    if (cookieNotice && !localStorage.getItem('cookiesAccepted')) {
+      cookieNotice.style.display = 'none';
+    }
+  }, 5000);
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        const navHeight = document.querySelector('.nav').offsetHeight;
+        const targetPosition = targetElement.offsetTop - navHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('section, header.header');
+
+  const projectDescriptions = {
+    'Smart Home IoT': {
+      image: 'https://images.unsplash.com/photo-1558346547-4439467bd1d5',
+      description: 'Plataforma IoT para domótica integrada con tecnologías modernas. Características principales: Control de dispositivos desde cualquier lugar, automatizaciones personalizadas según preferencias del usuario, integración con asistentes de voz, y dashboard en tiempo real para monitorización. Stack: React, MQTT, MongoDB, Node.js'
+    },
+    'CRM Platform': {
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978',
+      description: 'Sistema CRM empresarial completo con gestión de clientes y ventas. Incluye seguimiento de leads, pipeline de ventas, reportes automáticos y panel de analítica avanzada. Stack: PHP, MySQL, Laravel, JavaScript'
+    },
+    'HR Management System': {
+      image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216',
+      description: 'Sistema integral de gestión de recursos humanos con módulos de reclutamiento, evaluación de desempeño, gestión de vacaciones y nóminas. Stack: Django, PostgreSQL, Vue.js'
+    },
+    'Real-time Analytics': {
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+      description: 'Dashboard de análisis de datos en tiempo real con visualizaciones interactivas y sistema de alertas personalizado. Stack: Node.js, Socket.io, D3.js'
+    },
+    'Streaming Platform': {
+      image: 'https://images.unsplash.com/photo-1567443024551-f3e3cc2be870',
+      description: 'Plataforma de streaming de contenido multimedia con características avanzadas de transmisión, sistema de recomendaciones y analytics. Stack: WebRTC, React, FFmpeg'
+    },
+    'Inventory Management': {
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d',
+      description: 'Sistema de gestión de inventario y almacenes con seguimiento en tiempo real, gestión de proveedores y reportes automatizados. Stack: PHP, MySQL, JavaScript'
+    },
+    'B2B E-commerce': {
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40',
+      description: 'Plataforma de comercio electrónico B2B con catálogo personalizado, sistema de pedidos y gestión de cuentas empresariales. Stack: Magento, PHP, MySQL'
+    },
+    'FinTech Analytics Dashboard': {
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+      description: 'Plataforma de analítica financiera empresarial con más de 20 KPIs financieros, integración con múltiples APIs y sistema de alertas personalizable. Stack: React, TypeScript, D3.js, Node.js'
+    },
+    'E-Commerce Mobile App': {
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c',
+      description: 'Aplicación móvil de e-commerce con procesamiento de pedidos, sistema de notificaciones push e integración con múltiples pasarelas de pago. Stack: React Native, Firebase, Redux'
+    },
+    'ERP System': {
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+      description: 'Sistema ERP empresarial con módulos de Finanzas, RRHH, Inventario y CRM integrados. Stack: Angular, Spring Boot, PostgreSQL'
+    },
+    'E-Learning Platform': {
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3',
+      description: 'Plataforma de e-learning con sistema de videoconferencias, evaluaciones automáticas y certificaciones digitales. Stack: Vue.js, Django REST Framework, PostgreSQL'
+    },
+    'API Gateway Manager': {
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31',
+      description: 'Gateway de APIs empresarial con gestión de más de 1000 APIs, seguridad OAuth2 y analíticas en tiempo real. Stack: Node.js, Express, Redis, Elasticsearch'
+    }
+  };
+
+  const navLinks = document.querySelectorAll('.nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.pageYOffset;
+
+    if (scrollPos < 100) {
+      current = 'home';
+    } else {
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+          current = section.getAttribute('id') || 'home';
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if(link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  window.dispatchEvent(new Event('scroll'));
+
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      console.log('Form submitted:', { name, email, subject, message });
+      
+      alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
+      
+      this.reset();
+    });
+  }
+
+  const particles = document.querySelector('.particles');
+  for(let i = 0; i < 20; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 15 + 's';
+    particles.appendChild(particle);
+  }
+
+  function createFloatingElements() {
+    const floatingContainer = document.createElement('div');
+    floatingContainer.className = 'floating-elements';
+    
+    // Create clouds (keep existing cloud code)
+    for(let i = 0; i < 5; i++) {
+      const cloud = document.createElement('div');
+      cloud.className = 'cloud';
+      cloud.style.width = Math.random() * 60 + 40 + 'px';
+      cloud.style.height = Math.random() * 30 + 20 + 'px';
+      cloud.style.top = Math.random() * 60 + '%';
+      cloud.style.animationDelay = Math.random() * 10 + 's';
+      floatingContainer.appendChild(cloud);
+    }
+    
+    // Updated special characters array with new symbols
+    const specialChars = ['0', '1', ',', ':', '-', '_', '*', '¨', '{', '}', '#', '*', '$', '&', '!', '¡'];
+    for(let i = 0; i < 15; i++) {
+      const char = document.createElement('div');
+      char.className = 'special-char';
+      char.textContent = specialChars[Math.floor(Math.random() * specialChars.length)];
+      char.style.animationDelay = Math.random() * 15 + 's';
+      char.style.top = Math.random() * 80 + '%';
+      floatingContainer.appendChild(char);
+    }
+    
+    document.querySelector('.header').appendChild(floatingContainer);
+  }
+
+  createFloatingElements();
+  
+  function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.progress-bar');
+    
+    skillBars.forEach(bar => {
+      const width = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => {
+        bar.style.width = width;
+      }, 200);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateSkillBars();
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  const skillsSection = document.querySelector('.skills');
+  if (skillsSection) {
+    observer.observe(skillsSection);
+  }
+
+  const skillDescriptions = {
+    'HTML5/CSS3': {
+      image: 'https://images.unsplash.com/photo-1621839673705-6617adf9e890',
+      description: 'Mi experiencia de 15+ años en HTML5 y CSS3 me ha permitido dominar las últimas especificaciones y crear interfaces modernas y responsivas. He trabajado en proyectos de gran escala y mantenido altos estándares de accesibilidad y rendimiento.'
+    },
+    'JavaScript/TypeScript': {
+      image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a',
+      description: 'Amplia experiencia en JavaScript moderno (ES6+) y TypeScript, desarrollo de aplicaciones complejas y optimización de rendimiento. Especializado en patrones de diseño y arquitecturas escalables.'
+    },
+    'React': {
+      image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee',
+      description: 'Experiencia extensa en desarrollo de aplicaciones web con React, incluido React Hooks, Context API, Redux y Next.js. Implementación de aplicaciones empresariales de gran escala y optimización de rendimiento.'
+    },
+    'Angular': {
+      image: 'https://images.unsplash.com/photo-1632882765546-1ee75f53becb',
+      description: 'Desarrollo de aplicaciones empresariales con Angular. Experiencia en TypeScript, RxJS, y NgRx. Implementación de arquitecturas escalables y patrones de diseño avanzados.'
+    },
+    'Vue': {
+      image: 'https://images.unsplash.com/photo-1607706189992-eae578626c86',
+      description: 'Desarrollo de SPAs y aplicaciones empresariales con Vue.js. Experiencia con Vuex, Vue Router y Nuxt.js. Implementación de sistemas escalables y mantenibles.'
+    },
+    'PHP/Laravel': {
+      image: 'https://images.unsplash.com/photo-1599507593548-0187ac4043c6',
+      description: 'Amplia experiencia en desarrollo backend con PHP y Laravel, creando APIs RESTful y aplicaciones web robustas.'
+    },
+    'Node.js/Express': {
+      image: 'https://images.unsplash.com/photo-1561736778-92e52a7769ef',
+      description: 'Construcción de APIs escalables y microservicios con Node.js y Express. Experiencia en tiempo real con Socket.io.'
+    },
+    'Python/Django': {
+      image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4',
+      description: 'Desarrollo de aplicaciones web y análisis de datos con Python. Experto en Django y Django REST framework.'
+    },
+    'SQL/NoSQL': {
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d',
+      description: 'Diseño y optimización de bases de datos relacionales y NoSQL. Experiencia con PostgreSQL, MongoDB y Redis.'
+    },
+    'AWS/Azure': {
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa',
+      description: 'Arquitectura de soluciones cloud y despliegue de aplicaciones en AWS y Azure. Certificaciones oficiales.'
+    },
+    'Docker/Kubernetes': {
+      image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b',
+      description: 'Containerización de aplicaciones y orquestación con Docker y Kubernetes. Experiencia en CI/CD y DevOps.'
+    },
+    'CI/CD': {
+      image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb',
+      description: 'Implementación de pipelines de integración y despliegue continuo usando Jenkins, GitHub Actions y GitLab CI.'
+    },
+    'Git/Version Control': {
+      image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498',
+      description: 'Gestión avanzada de versiones con Git, incluyendo flujos de trabajo complejos y resolución de conflictos.'
+    },
+    'UI/UX Design': {
+      image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c',
+      description: 'Diseño de interfaces centradas en el usuario, prototipado y testing de usabilidad. Experiencia con Figma y Adobe XD.'
+    },
+    'Assembly': {
+      image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea',
+      description: 'Programación de bajo nivel y optimización de rendimiento. Experiencia en x86 y ARM. Desarrollo de drivers y optimización de sistemas.'
+    }
+  };
+
+  const modal = document.getElementById('skillModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImage = document.getElementById('modalImage');
+  const modalDescription = document.getElementById('modalDescription'); 
+  const modalClose = document.querySelector('.modal-close');
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const projectName = this.querySelector('h3').textContent;
+      const projectInfo = projectDescriptions[projectName];
+      
+      if (projectInfo) {
+        modalTitle.textContent = projectName;
+        modalImage.src = projectInfo.image;
+        modalImage.alt = `Captura del proyecto ${projectName}`;
+        modalDescription.textContent = projectInfo.description;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Add click handlers to all skill bars
+  document.querySelectorAll('.skill-bar').forEach(skillBar => {
+    skillBar.addEventListener('click', function() {
+      const skillName = this.querySelector('h3').childNodes[0].textContent.trim();
+      const skillInfo = skillDescriptions[skillName];
+      
+      if (skillInfo) {
+        modalTitle.textContent = skillName;
+        modalImage.src = skillInfo.image;
+        modalImage.alt = `Ilustración de ${skillName}`;
+        modalDescription.textContent = skillInfo.description;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const codeDescriptions = {
+    'HTML': {
+      image: 'https://images.unsplash.com/photo-1621839673705-6617adf9e890',
+      description: 'Experiencia profunda en HTML5, incluyendo semántica avanzada, accesibilidad (ARIA), formularios HTML5, y APIs modernas del navegador. Especializado en SEO y creación de documentos bien estructurados. Más de 10 años de experiencia en desarrollo web frontend y numerosos proyectos comerciales exitosos.'
+    },
+    'CSS': {
+      image: 'https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19',
+      description: 'Dominio completo de CSS3, incluyendo Flexbox, Grid, animaciones, transformaciones y variables CSS. Experiencia en frameworks como Sass/SCSS, PostCSS y Tailwind. Especializado en diseño responsivo y mobile-first. Creación de sistemas de diseño escalables.'
+    },
+    'JavaScript': {
+      image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a',
+      description: 'Amplio conocimiento de JavaScript moderno (ES6+), patrones de diseño, programación funcional y orientada a objetos. Experiencia con frameworks principales como React, Vue y Angular. Desarrollo de aplicaciones SPA y PWA.'
+    },
+    'Python': {
+      image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4',
+      description: 'Desarrollo de aplicaciones backend, análisis de datos y automatización con Python. Experiencia con Django, Flask y FastAPI. Implementación de algoritmos de machine learning y procesamiento de datos.'
+    },
+    'Java': {
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97',
+      description: 'Desarrollo de aplicaciones empresariales con Java, Spring Framework y microservicios. Experiencia en JVM, patrones de diseño y arquitecturas escalables.'
+    },
+    'PHP': {
+      image: 'https://images.unsplash.com/photo-1599507593548-0187ac4043c6',
+      description: 'Desarrollo backend con PHP moderno, Laravel y Symfony. Creación de APIs RESTful y aplicaciones web robustas. Experiencia en CMS como WordPress y Drupal.'
+    },
+    'Ruby': {
+      image: 'https://images.unsplash.com/photo-1543966888-7c1dc482a810',
+      description: 'Desarrollo web con Ruby on Rails, creación de APIs y automatización de tareas. Experiencia en testing con RSpec y desarrollo ágil.'
+    },
+    'C#': {
+      image: 'https://images.unsplash.com/photo-1542903660-eedba2cda473',
+      description: 'Desarrollo de aplicaciones .NET, servicios web y aplicaciones de escritorio. Experiencia con ASP.NET Core y Entity Framework.'
+    },
+    'C++': {
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c',
+      description: 'Desarrollo de software de sistema y aplicaciones de alto rendimiento. Experiencia en optimización y programación de bajo nivel.'
+    },
+    'TypeScript': {
+      image: 'https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa',
+      description: 'Desarrollo frontend con TypeScript, Angular y Next.js. Implementación de patrones de diseño y arquitecturas escalables.'
+    },
+    'SQL': {
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d',
+      description: 'Diseño y optimización de bases de datos relacionales. Experiencia con PostgreSQL, MySQL y Oracle. Desarrollo de procedimientos almacenados y optimización de consultas.'
+    },
+    'Swift': {
+      image: 'https://images.unsplash.com/photo-1621839673705-6617adf9e890',
+      description: 'Desarrollo de aplicaciones iOS nativas. Experiencia con UIKit, SwiftUI y patrones de diseño iOS.'
+    },
+    'Go': {
+      image: 'https://images.unsplash.com/photo-1600267185393-e158a98703de',
+      description: 'Desarrollo de servicios backend y microservicios con Go. Experiencia en concurrencia y aplicaciones de alto rendimiento.'
+    },
+    'Kotlin': {
+      image: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3',
+      description: 'Desarrollo de aplicaciones Android nativas y multiplataforma. Experiencia con Jetpack Compose y arquitecturas modernas.'
+    },
+    'Rust': {
+      image: 'https://images.unsplash.com/photo-1535320903710-d993d3d77d29',
+      description: 'Desarrollo de software de sistema y aplicaciones de alto rendimiento. Experiencia en programación segura y concurrente.'
+    },
+    'Bash': {
+      image: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97',
+      description: 'Amplia experiencia en scripting y automatización con Bash shell. Desarrollo de scripts para administración de sistemas, procesamiento de datos y tareas de DevOps. Conocimiento profundo de comandos Unix/Linux y pipelines.'
+    }
+  };
+
+  // Add click handlers for code achievement cards
+  document.querySelectorAll('.achievement-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const codeName = this.querySelector('.achievement-title').textContent;
+      const codeInfo = codeDescriptions[codeName];
+      
+      if (codeInfo) {
+        modalTitle.textContent = codeName;
+        modalImage.src = codeInfo.image;
+        modalImage.alt = `Ilustración de programación en ${codeName}`;
+        modalDescription.textContent = codeInfo.description;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close modal handlers
+  modalClose.onclick = function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  const softwareDescriptions = {
+    'Visual Studio Code': {
+      image: 'https://images.unsplash.com/photo-1618477247222-acbdb0e159b3',
+      description: '8+ años de experiencia usando VS Code como mi editor principal. Certificado en extensiones y personalización avanzada. +10,000 horas de uso registradas. Experto en debugging, Live Share y gestión de extensiones. Configuraciones personalizadas para diferentes stacks tecnológicos.'
+    },
+    'Adobe Creative Suite': {
+      image: 'https://images.unsplash.com/photo-1562408590-e32931084e23',
+      description: '10+ años trabajando con Adobe Creative Suite. Certificaciones oficiales en Photoshop, Illustrator y XD. Especializado en diseño UI/UX y assets para web. Portfolio extenso de proyectos comerciales.'
+    },
+    'MySQL Workbench': {
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d',
+      description: '7+ años de experiencia en diseño y optimización de bases de datos. Certificación Oracle MySQL Developer. Experto en diseño de esquemas, optimización de consultas y administración.'
+    },
+    'Figma': {
+      image: 'https://images.unsplash.com/photo-1617042375876-a13e36732a04',
+      description: '5+ años usando Figma diariamente. Certificado en Figma Advanced Design. +200 proyectos completados. Experto en componentes, sistemas de diseño y prototipado.'
+    },
+    'GitKraken': {
+      image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb',
+      description: '6+ años gestionando repositorios con GitKraken. Líder de equipo en implementación de flujos Git. Experto en resolución de conflictos y gestión de branches.'
+    },
+    'Postman': {
+      image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498',
+      description: '5+ años de experiencia en testing de APIs. Certificado Postman Expert. +1000 colecciones creadas. Especialista en automatización de pruebas y documentación.'
+    },
+    'Docker Desktop': {
+      image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b',
+      description: '4+ años trabajando con Docker. Certificación Docker Certified Associate. Experto en configuración de contenedores y orquestación con Docker Compose.'
+    },
+    'IntelliJ IDEA': {
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97',
+      description: '6+ años desarrollando en IntelliJ IDEA. Certificado en Spring Framework Development. Experto en debugging y optimización de código Java.'
+    },
+    'Chrome DevTools': {
+      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+      description: '10+ años de experiencia en debugging web. Certificaciones en Performance Web. Experto en análisis de rendimiento y optimización frontend.'
+    },
+    'Sketch': {
+      image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c',
+      description: '5+ años diseñando interfaces con Sketch. Certificado en UI Design. +300 proyectos completados. Especialista en sistemas de diseño y componentes.'
+    },
+    'MongoDB Compass': {
+      image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107',
+      description: '4+ años trabajando con MongoDB. Certificación MongoDB Developer. Experto en diseño de esquemas NoSQL y optimización de consultas.'
+    },
+    'Sublime Text': {
+      image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713',
+      description: '8+ años usando Sublime Text. Experto en personalización y plugins. Editor secundario para edición rápida de código y archivos de configuración.'
+    }
+  };
+
+  document.querySelectorAll('.software-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const softwareName = this.querySelector('h3').textContent;
+      const softwareInfo = softwareDescriptions[softwareName];
+      
+      if (softwareInfo) {
+        modalTitle.textContent = softwareName;
+        modalImage.src = softwareInfo.image;
+        modalImage.alt = `Screenshot de ${softwareName}`;
+        modalDescription.textContent = softwareInfo.description;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+});
+</script>
+<body>
+    <div id="skillModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <img id="modalImage" src="" alt="" class="modal-image">
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="#home" class="active">Inicio</a></li>
+      <li><a href="#about">Sobre Mí</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#code">Código</a></li>
+      <li><a href="#networks">Redes</a></li>
+      <li><a href="#3d">3D</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header id="home" class="header">
+    <div class="particles">
+    </div>
+    <div class="header-content">
+      <svg class="logo" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff"/>
+            <stop offset="100%" style="stop-color:#e9c46a"/>
+          </linearGradient>
+        </defs>
+        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+        <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
+              font-family="Poppins" font-size="30" fill="url(#logoGradient)">EJLP</text>
+      </svg>
+      <h1>Enrique José López Prim</h1>
+      <p>Técnico en Sistemas Microinformáticos y Redes</p>
+      <div class="header-buttons">
+        <a href="#projects" class="header-btn primary">Ver Proyectos</a>
+        <a href="#contact" class="header-btn">Contactar</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="cookie-notice" id="cookie-notice">
+    Este sitio utiliza cookies para mejorar tu experiencia.
+    <button onclick="acceptCookies()">Aceptar</button>
+  </div>
+
+  <section id="about" class="about">
+    <div class="about-card">
+      <div class="profile-image-container">
+        <img 
+          class="profile-image" 
+          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800" 
+          alt="Retrato profesional de Enrique López, desarrollador de software de 35 años, vistiendo traje azul marino, con una expresión confiada y amigable"
+        >
+        <div class="profile-image-border"></div>
+      </div>
+      <div class="about-content">
+        <h2>Sobre Mí</h2>
+        <p>¡Hola! Soy Enrique José López Prim, Técnico en Sistemas Microinformáticos y Redes con base en Valencia, y desde pequeño me ha apasionado el mundo de la informática. Nací el 31 de diciembre de 1982 y desde mis primeros años he estado rodeado de tecnología: he tenido en mis manos consolas y computadoras de todas las épocas, viendo de primera mano cómo ha evolucionado este fascinante sector desde los inicios de internet.</p>
+        
+        <p>Mi amor por la informática me ha llevado a especializarme en una amplia gama de lenguajes de programación y tecnologías, que me permiten abordar proyectos de desarrollo web, software y administración de sistemas. Entre mis conocimientos se encuentran HTML, CSS, JavaScript, Python, Java, PHP, Ruby, C#, C++, TypeScript, SQL, Swift, Go (Golang), Kotlin, y Rust.</p>
+        
+        <p>Mi enfoque está en brindar soluciones tecnológicas efectivas y modernas, combinando mis habilidades en programación con una fuerte dedicación a la resolución de problemas y la mejora constante. Siempre estoy listo para enfrentar nuevos retos y colaborar en proyectos que permitan aplicar y expandir mis conocimientos.</p>
+        
+        <div class="about-badges">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">PHP</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">React</span>
+          <span class="badge">Java</span>
+          <span class="badge">Ruby</span>
+          <span class="badge">C#</span>
+          <span class="badge">C++</span>
+          <span class="badge">TypeScript</span>
+          <span class="badge">Swift</span>
+          <span class="badge">Go</span>
+          <span class="badge">Kotlin</span>
+          <span class="badge">Rust</span>
+          <span class="badge">D3.js</span>
+          <span class="badge">Node.js</span>
+          <span class="badge">React Native</span>
+          <span class="badge">Firebase</span>
+          <span class="badge">Angular</span>
+          <span class="badge">Spring Boot</span>
+          <span class="badge">Vue.js</span>
+          <span class="badge">Django</span>
+          <span class="badge">Express</span>
+          <span class="badge">MQTT</span>
+          <span class="badge">IoT</span>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://github.com/elopezprim" aria-label="GitHub Profile">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://dribbble.com/elopezprim" aria-label="Dribbble Profile">
+            <i class="fab fa-dribbble"></i>
+          </a>
+          <a href="https://behance.net/elopezprim" aria-label="Behance Profile">
+            <i class="fab fa-behance"></i>
+          </a>
+          <a href="https://stackoverflow.com/users/elopezprim" aria-label="Stack Overflow Profile">
+            <i class="fab fa-stack-overflow"></i>
+          </a>
+          <a href="https://codepen.io/elopezprim" aria-label="CodePen Profile">
+            <i class="fab fa-codepen"></i>
+          </a>
+          <a href="https://reddit.com/user/elopezprim" aria-label="Reddit Profile">
+            <i class="fab fa-reddit"></i>
+          </a>
+          <a href="https://dev.to/elopezprim" aria-label="Dev.to Profile">
+            <i class="fab fa-dev"></i>
+          </a>
+          <a href="https://linkedin.com/in/elopezprim" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://kaggle.com/elopezprim" aria-label="Kaggle Profile">
+            <i class="fab fa-kaggle"></i>
+          </a>
+          <a href="https://designerhangout.slack.com" aria-label="Designer Hangout Slack">
+            <i class="fab fa-slack"></i>
+          </a>
+          <a href="https://artstation.com/elopezprim" aria-label="ArtStation Profile">
+            <i class="fab fa-artstation"></i>
+          </a>
+          <a href="https://medium.com/@elopezprim" aria-label="Medium Profile">
+            <i class="fab fa-medium"></i>
+          </a>
+          
+          <a href="https://facebook.com/elopezprim" aria-label="Facebook Profile">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://instagram.com/elopezprim" aria-label="Instagram Profile">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/elopezprim" aria-label="Twitter Profile">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://wa.me/1234567890" aria-label="WhatsApp Contact">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://www.renderosity.com/users/elopezprim" aria-label="Renderosity Profile">
+            <i class="fas fa-cube"></i>
+          </a>
+          <a href="https://www.therookies.co/u/elopezprim" aria-label="The Rookies Profile">
+            <i class="fas fa-star"></i>
+          </a>
+        </div>
+
+        <div class="about-links">
+          <a href="https://drive.google.com/file/d/123456/view" class="about-link">
+            <i class="fas fa-file-pdf"></i>
+            Descargar CV
+          </a>
+          <a href="https://github.com/elopezprim" class="about-link">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="mailto:contacto@enriquelopez.dev" class="about-link">
+            <i class="fas fa-envelope"></i>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="projects-container">
+      <h2>Proyectos Destacados</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1558346547-4439467bd1d5" alt="Interfaz de control de hogar inteligente con dashboard mostrando diferentes dispositivos y estadísticas">
+          <div class="project-content">
+            <h3>Smart Home IoT</h3>
+            <p>Plataforma de control domótico con integración IoT y análisis en tiempo real.</p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MQTT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" alt="Dashboard de CRM mostrando análisis de ventas y métricas de clientes">
+          <div class="project-content">
+            <h3>CRM Platform</h3>
+            <p>Sistema de gestión de relaciones con clientes con análisis avanzado.</p>
+            <div class="project-tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" alt="Sistema de gestión de recursos humanos mostrando perfiles de empleados y estadísticas">
+          <div class="project-content">
+            <h3>HR Management System</h3>
+            <p>Plataforma integral para gestión de recursos humanos.</p>
+            <div class="project-tags">
+              <span class="tag">Django</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Vue.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Dashboard de análisis en tiempo real con gráficos interactivos">
+          <div class="project-content">
+            <h3>Real-time Analytics</h3>
+            <p>Dashboard de análisis en tiempo real con visualizaciones D3.js.</p>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Socket.io</span>
+              <span class="tag">D3.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870" alt="Plataforma de streaming mostrando interfaz de usuario y controles de reproducción">
+          <div class="project-content">
+            <h3>Streaming Platform</h3>
+            <p>Plataforma de streaming multimedia con recomendaciones.</p>
+            <div class="project-tags">
+              <span class="tag">WebRTC</span>
+              <span class="tag">React</span>
+              <span class="tag">FFmpeg</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" alt="Sistema de gestión de inventario mostrando stock y estadísticas">
+          <div class="project-content">
+            <h3>Inventory Management</h3>
+            <p>Sistema de gestión de inventario con tracking en tiempo real.</p>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="skills-container">
+      <h2>Habilidades Técnicas</h2>
+      <div class="skills-grid">
+        <div class="skill-bar">
+          <h3>HTML5/CSS3 <span>95%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 95%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-bar">
+          <h3>JavaScript/TypeScript <span>90%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>React <span>85%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Angular <span>80%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Vue <span>75%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>PHP/Laravel <span>85%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Node.js/Express <span>80%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Python/Django <span>75%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>SQL/NoSQL <span>85%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>AWS/Azure <span>75%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Docker/Kubernetes <span>70%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 70%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>CI/CD <span>75%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>Git/Version Control <span>90%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar">
+          <h3>UI/UX Design <span>80%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="software" class="software">
+    <div class="software-container">
+      <h2>Software y Herramientas</h2>
+      <div class="skills-grid">
+        <div class="software-item">
+          <i class="fas fa-code software-icon"></i>
+          <div class="software-info">
+            <h3>Visual Studio Code</h3>
+            <p>Editor principal</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-palette software-icon"></i>
+          <div class="software-info">
+            <h3>Adobe Creative Suite</h3>
+            <p>Diseño gráfico</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-database software-icon"></i>
+          <div class="software-info">
+            <h3>MySQL Workbench</h3>
+            <p>Gestión BD</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fab fa-figma software-icon"></i>
+          <div class="software-info">
+            <h3>Figma</h3>
+            <p>Diseño UI/UX</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-code-branch software-icon"></i>
+          <div class="software-info">
+            <h3>GitKraken</h3>
+            <p>Control de versiones</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-paper-plane software-icon"></i>
+          <div class="software-info">
+            <h3>Postman</h3>
+            <p>Testing API</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fab fa-docker software-icon"></i>
+          <div class="software-info">
+            <h3>Docker Desktop</h3>
+            <p>Contenedores</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-laptop-code software-icon"></i>
+          <div class="software-info">
+            <h3>IntelliJ IDEA</h3>
+            <p>Desarrollo Java</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fab fa-chrome software-icon"></i>
+          <div class="software-info">
+            <h3>Chrome DevTools</h3>
+            <p>Debugging</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-pencil-ruler software-icon"></i>
+          <div class="software-info">
+            <h3>Sketch</h3>
+            <p>Diseño UI</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-leaf software-icon"></i>
+          <div class="software-info">
+            <h3>MongoDB Compass</h3>
+            <p>NoSQL DB</p>
+          </div>
+        </div>
+
+        <div class="software-item">
+          <i class="fas fa-file-code software-icon"></i>
+          <div class="software-info">
+            <h3>Sublime Text</h3>
+            <p>Editor secundario</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="code" class="code-achievements">
+    <div class="code-achievements-container">
+      <h2>Código</h2>
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="achievement-title">HTML</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-css3"></i>
+            </div>
+            <h3 class="achievement-title">CSS</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-js"></i>
+            </div>
+            <h3 class="achievement-title">JavaScript</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <h3 class="achievement-title">Python</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-java"></i>
+            </div>
+            <h3 class="achievement-title">Java</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-php"></i>
+            </div>
+            <h3 class="achievement-title">PHP</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <h3 class="achievement-title">Ruby</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-windows"></i>
+            </div>
+            <h3 class="achievement-title">C#</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-plus-circle"></i>
+            </div>
+            <h3 class="achievement-title">C++</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <h3 class="achievement-title">TypeScript</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="achievement-title">SQL</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-apple"></i>
+            </div>
+            <h3 class="achievement-title">Swift</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-running"></i>
+            </div>
+            <h3 class="achievement-title">Go</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <h3 class="achievement-title">Kotlin</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-cog"></i>
+            </div>
+            <h3 class="achievement-title">Rust</h3>
+          </div>
+        </div>
+
+        <div class="achievement-card">
+          <div class="achievement-header">
+            <div class="achievement-icon">
+              <i class="fas fa-terminal"></i>
+            </div>
+            <h3 class="achievement-title">Bash</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="networks" class="networks">
+    <div class="networks-container">
+      <h2>Infraestructura y Redes</h2>
+      <div class="networks-grid">
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-network-wired network-icon"></i>
+            <h3>Redes LAN/WAN</h3>
+          </div>
+          <p class="network-description">Diseño e implementación de redes empresariales, configuración de switches y routers.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-wifi network-icon"></i>
+            <h3>Redes Inalámbricas</h3>
+          </div>
+          <p class="network-description">Configuración y optimización de redes WiFi empresariales.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-phone-alt network-icon"></i>
+            <h3>VoIP</h3>
+          </div>
+          <p class="network-description">Implementación de sistemas de telefonía IP y comunicaciones unificadas.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-chart-line network-icon"></i>
+            <h3>Monitorización</h3>
+          </div>
+          <p class="network-description">Sistemas de monitoreo de red y análisis de rendimiento.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-sitemap network-icon"></i>
+            <h3>VLAN y Routing</h3>
+          </div>
+          <p class="network-description">Configuración de VLANs y protocolos de enrutamiento.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-shield-alt network-icon"></i>
+            <h3>Seguridad de Red</h3>
+          </div>
+          <p class="network-description">Implementación de firewalls, VPNs y políticas de seguridad.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-server network-icon"></i>
+            <h3>Administración de Servidores</h3>
+          </div>
+          <p class="network-description">Gestión de servidores Linux y Windows, virtualización.</p>
+        </div>
+
+        <div class="network-card">
+          <div class="network-header">
+            <i class="fas fa-cloud network-icon"></i>
+            <h3>Cloud Computing</h3>
+          </div>
+          <p class="network-description">Implementación y gestión de servicios en AWS y Azure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="3d" class="threed">
+    <div class="threed-container">
+      <h2>Diseño 3D y CAD</h2>
+      <div class="threed-grid">
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-cube threed-icon"></i>
+            <h3>Modelado 3D</h3>
+          </div>
+          <p class="threed-description">Diseño de modelos 3D con Blender y Maya.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-vr-cardboard threed-icon"></i>
+            <h3>Realidad Virtual</h3>
+          </div>
+          <p class="threed-description">Desarrollo de experiencias VR y modelos 3D interactivos.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-print threed-icon"></i>
+            <h3>Impresión 3D</h3>
+          </div>
+          <p class="threed-description">Preparación de modelos para fabricación aditiva.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-lightbulb threed-icon"></i>
+            <h3>Iluminación 3D</h3>
+          </div>
+          <p class="threed-description">Configuración de iluminación y renderizado fotorrealista.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-camera threed-icon"></i>
+            <h3>Fotogrametría</h3>
+          </div>
+          <p class="threed-description">Creación de modelos 3D a partir de fotografías.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-drafting-compass threed-icon"></i>
+            <h3>CAD</h3>
+          </div>
+          <p class="threed-description">Diseño técnico con AutoCAD y SolidWorks.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-paint-brush threed-icon"></i>
+            <h3>Texturizado</h3>
+          </div>
+          <p class="threed-description">Creación de texturas y materiales realistas.</p>
+        </div>
+
+        <div class="threed-card">
+          <div class="threed-header">
+            <i class="fas fa-film threed-icon"></i>
+            <h3>Animación</h3>
+          </div>
+          <p class="threed-description">Animación 3D y efectos visuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <h2>Contacto</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Nombre" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="text" id="subject" placeholder="Asunto" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder="Mensaje" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2023 Enrique López · <span class="version">v2.1.0</span></p>
+  </footer>
+</body></html>
