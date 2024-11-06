@@ -319,10 +319,11 @@ body {
 .profile-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain to preserve aspect ratio */
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
+  background: white; /* Add white background for transparent PNG */
 }
 
 .profile-image-border {
@@ -1854,11 +1855,12 @@ document.addEventListener('DOMContentLoaded', function() {
   <section id="about" class="about">
     <div class="about-card">
       <div class="profile-image-container">
-        <img 
-          class="profile-image" 
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800" 
-          alt="Retrato profesional de Enrique López, desarrollador de software de 35 años, vistiendo traje azul marino, con una expresión confiada y amigable"
-        >
+<img 
+  class="profile-image" 
+  src="https://i.ibb.co/z2Qzts1/image.png" 
+  alt="Fotografía de Enrique José López Prim, desarrollador y técnico en sistemas"
+>
+
         <div class="profile-image-border"></div>
       </div>
       <div class="about-content">
@@ -1963,8 +1965,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Sistema integral de recursos humanos con módulos de reclutamiento y evaluación.</p>
             <div class="project-tags">
               <span class="tag">Django</span>
-              <span class="tag">Vue.js</span>
               <span class="tag">PostgreSQL</span>
+              <span class="tag">Vue.js</span>
             </div>
           </div>
         </div>
@@ -1975,18 +1977,18 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3>Real-time Analytics</h3>
             <p>Dashboard de análisis en tiempo real con visualizaciones interactivas.</p>
             <div class="project-tags">
+              <span class="tag">D3.js</span>
               <span class="tag">Node.js</span>
               <span class="tag">Socket.io</span>
-              <span class="tag">D3.js</span>
             </div>
           </div>
         </div>
 
         <div class="project-card">
-          <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870" alt="Plataforma de streaming de video">
+          <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870" alt="Plataforma de streaming">
           <div class="project-content">
             <h3>Streaming Platform</h3>
-            <p>Plataforma de streaming con sistema de recomendaciones personalizado.</p>
+            <p>Plataforma de streaming con características avanzadas y analytics.</p>
             <div class="project-tags">
               <span class="tag">WebRTC</span>
               <span class="tag">React</span>
@@ -1999,7 +2001,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" alt="Sistema de gestión de inventario">
           <div class="project-content">
             <h3>Inventory Management</h3>
-            <p>Sistema de gestión de inventario con tracking en tiempo real.</p>
+            <p>Sistema de gestión de inventario con seguimiento en tiempo real.</p>
             <div class="project-tags">
               <span class="tag">PHP</span>
               <span class="tag">MySQL</span>
@@ -2007,7 +2009,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -2017,107 +2018,75 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Habilidades Técnicas</h2>
       <div class="skills-grid">
         <div class="skill-bar">
-          <h3>HTML5/CSS3 <small>95%</small></h3>
+          <h3>HTML5/CSS3 <span>95%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 95%"></div>
           </div>
         </div>
-        
         <div class="skill-bar">
-          <h3>JavaScript/TypeScript <small>90%</small></h3>
+          <h3>JavaScript/TypeScript <span>90%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 90%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>React <small>85%</small></h3>
+          <h3>React <span>85%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 85%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>Angular <small>80%</small></h3>
+          <h3>Angular <span>80%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 80%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>Vue <small>75%</small></h3>
+          <h3>Vue <span>75%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 75%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>PHP/Laravel <small>85%</small></h3>
+          <h3>PHP/Laravel <span>85%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 85%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>Node.js/Express <small>80%</small></h3>
+          <h3>Node.js/Express <span>80%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 80%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>Python/Django <small>75%</small></h3>
+          <h3>Python/Django <span>75%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 75%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>SQL/NoSQL <small>85%</small></h3>
+          <h3>SQL/NoSQL <span>85%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 85%"></div>
           </div>
         </div>
-
         <div class="skill-bar">
-          <h3>AWS/Azure <small>80%</small></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>Docker/Kubernetes <small>75%</small></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 75%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>CI/CD <small>80%</small></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 80%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>Git/Version Control <small>90%</small></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>UI/UX Design <small>85%</small></h3>
-          <div class="progress">
-            <div class="progress-bar" style="width: 85%"></div>
-          </div>
-        </div>
-
-        <div class="skill-bar">
-          <h3>Assembly <small>70%</small></h3>
+          <h3>AWS/Azure <span>70%</span></h3>
           <div class="progress">
             <div class="progress-bar" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill-bar">
+          <h3>Docker/Kubernetes <span>75%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-bar">
+          <h3>CI/CD <span>80%</span></h3>
+          <div class="progress">
+            <div class="progress-bar" style="width: 80%"></div>
           </div>
         </div>
       </div>
@@ -2129,23 +2098,29 @@ document.addEventListener('DOMContentLoaded', function() {
       <h2>Software y Herramientas</h2>
       <div class="software-grid">
         <div class="software-item">
-          <i class="fas fa-code software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-code"></i>
+          </div>
           <div class="software-info">
             <h3>Visual Studio Code</h3>
-            <p>Editor principal de código</p>
+            <p>Editor principal para desarrollo</p>
           </div>
         </div>
-
+        
         <div class="software-item">
-          <i class="fas fa-palette software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-palette"></i>
+          </div>
           <div class="software-info">
             <h3>Adobe Creative Suite</h3>
-            <p>Diseño y edición multimedia</p>
+            <p>Diseño gráfico y prototipado</p>
           </div>
         </div>
 
         <div class="software-item">
-          <i class="fas fa-database software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-database"></i>
+          </div>
           <div class="software-info">
             <h3>MySQL Workbench</h3>
             <p>Gestión de bases de datos</p>
@@ -2153,15 +2128,19 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fab fa-figma software-icon"></i>
+          <div class="software-icon">
+            <i class="fab fa-figma"></i>
+          </div>
           <div class="software-info">
             <h3>Figma</h3>
-            <p>Diseño UI/UX</p>
+            <p>Diseño de interfaces</p>
           </div>
         </div>
 
         <div class="software-item">
-          <i class="fab fa-git-alt software-icon"></i>
+          <div class="software-icon">
+            <i class="fab fa-git-alt"></i>
+          </div>
           <div class="software-info">
             <h3>GitKraken</h3>
             <p>Control de versiones</p>
@@ -2169,7 +2148,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fas fa-paper-plane software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
           <div class="software-info">
             <h3>Postman</h3>
             <p>Testing de APIs</p>
@@ -2177,7 +2158,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fab fa-docker software-icon"></i>
+          <div class="software-icon">
+            <i class="fab fa-docker"></i>
+          </div>
           <div class="software-info">
             <h3>Docker Desktop</h3>
             <p>Containerización</p>
@@ -2185,7 +2168,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fas fa-laptop-code software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
           <div class="software-info">
             <h3>IntelliJ IDEA</h3>
             <p>Desarrollo Java</p>
@@ -2193,7 +2178,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fab fa-chrome software-icon"></i>
+          <div class="software-icon">
+            <i class="fab fa-chrome"></i>
+          </div>
           <div class="software-info">
             <h3>Chrome DevTools</h3>
             <p>Debugging web</p>
@@ -2201,7 +2188,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fas fa-pencil-ruler software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-pen-nib"></i>
+          </div>
           <div class="software-info">
             <h3>Sketch</h3>
             <p>Diseño de interfaces</p>
@@ -2209,15 +2198,19 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="software-item">
-          <i class="fas fa-database software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
           <div class="software-info">
             <h3>MongoDB Compass</h3>
-            <p>Base de datos NoSQL</p>
+            <p>Gestión NoSQL</p>
           </div>
         </div>
 
         <div class="software-item">
-          <i class="fas fa-edit software-icon"></i>
+          <div class="software-icon">
+            <i class="fas fa-file-code"></i>
+          </div>
           <div class="software-info">
             <h3>Sublime Text</h3>
             <p>Editor secundario</p>
@@ -2229,116 +2222,116 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="code" class="code-achievements">
     <div class="code-achievements-container">
-      <h2>Experiencia en Código</h2>
+      <h2>Conocimientos en Código</h2>
       <div class="achievement-grid">
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-html5 achievement-icon"></i>
+            <i class="fab fa-html5"></i>
             <h3 class="achievement-title">HTML</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-css3-alt achievement-icon"></i>
+            <i class="fab fa-css3-alt"></i>
             <h3 class="achievement-title">CSS</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-js achievement-icon"></i>
+            <i class="fab fa-js"></i>
             <h3 class="achievement-title">JavaScript</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-python achievement-icon"></i>
+            <i class="fab fa-python"></i>
             <h3 class="achievement-title">Python</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-java achievement-icon"></i>
+            <i class="fab fa-java"></i>
             <h3 class="achievement-title">Java</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-php achievement-icon"></i>
+            <i class="fab fa-php"></i>
             <h3 class="achievement-title">PHP</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fas fa-gem achievement-icon"></i>
+            <i class="fas fa-gem"></i>
             <h3 class="achievement-title">Ruby</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-windows achievement-icon"></i>
+            <i class="fab fa-windows"></i>
             <h3 class="achievement-title">C#</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fas fa-plus-circle achievement-icon"></i>
+            <i class="fas fa-plus-circle"></i>
             <h3 class="achievement-title">C++</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-js-square achievement-icon"></i>
+            <i class="fab fa-js-square"></i>
             <h3 class="achievement-title">TypeScript</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fas fa-database achievement-icon"></i>
+            <i class="fas fa-database"></i>
             <h3 class="achievement-title">SQL</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-apple achievement-icon"></i>
+            <i class="fab fa-apple"></i>
             <h3 class="achievement-title">Swift</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fas fa-cloud achievement-icon"></i>
+            <i class="fas fa-cloud"></i>
             <h3 class="achievement-title">Go</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fab fa-android achievement-icon"></i>
+            <i class="fab fa-android"></i>
             <h3 class="achievement-title">Kotlin</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fas fa-cogs achievement-icon"></i>
+            <i class="fas fa-cogs"></i>
             <h3 class="achievement-title">Rust</h3>
           </div>
         </div>
-
+        
         <div class="achievement-card">
           <div class="achievement-header">
-            <i class="fas fa-terminal achievement-icon"></i>
+            <i class="fas fa-terminal"></i>
             <h3 class="achievement-title">Bash</h3>
           </div>
         </div>
@@ -2348,70 +2341,70 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="networks" class="networks">
     <div class="networks-container">
-      <h2>Experiencia en Redes</h2>
+      <h2>Conocimientos en Redes</h2>
       <div class="networks-grid">
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-network-wired"></i>
             <h3>Diseño de Red</h3>
           </div>
-          <p class="network-description">Diseño e implementación de infraestructuras</p>
+          <p class="network-description">Planificación e implementación de infraestructuras de red.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-shield-alt"></i>
             <h3>Seguridad</h3>
           </div>
-          <p class="network-description">Protección y monitorización de redes</p>
+          <p class="network-description">Implementación de políticas de seguridad y firewalls.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-server"></i>
             <h3>Servidores</h3>
           </div>
-          <p class="network-description">Gestión y mantenimiento de servidores</p>
+          <p class="network-description">Administración de servidores Linux y Windows.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-cloud"></i>
             <h3>Cloud</h3>
           </div>
-          <p class="network-description">Servicios en la nube e infraestructura</p>
+          <p class="network-description">Gestión de infraestructuras en la nube.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-wifi"></i>
             <h3>Redes Wi-Fi</h3>
           </div>
-          <p class="network-description">Implementación de redes inalámbricas</p>
+          <p class="network-description">Diseño y optimización de redes inalámbricas.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-route"></i>
             <h3>Enrutamiento</h3>
           </div>
-          <p class="network-description">Configuración y optimización de rutas</p>
+          <p class="network-description">Configuración de protocolos de enrutamiento.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-project-diagram"></i>
             <h3>VLANs</h3>
           </div>
-          <p class="network-description">Segmentación y gestión de redes virtuales</p>
+          <p class="network-description">Implementación de redes virtuales y segmentación.</p>
         </div>
-
+        
         <div class="network-card">
           <div class="network-header">
             <i class="fas fa-lock"></i>
             <h3>VPN</h3>
           </div>
-          <p class="network-description">Redes privadas virtuales y túneles seguros</p>
+          <p class="network-description">Configuración de redes privadas virtuales.</p>
         </div>
       </div>
     </div>
@@ -2419,70 +2412,70 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="threed" class="threed">
     <div class="threed-container">
-      <h2>Experiencia en 3D</h2>
+      <h2>Conocimientos en 3D</h2>
       <div class="threed-grid">
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-cube"></i>
             <h3>Modelado</h3>
           </div>
-          <p class="threed-description">Creación de modelos 3D</p>
+          <p class="threed-description">Creación de modelos 3D orgánicos e inorgánicos.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-film"></i>
             <h3>Animación</h3>
           </div>
-          <p class="threed-description">Animación de personajes y objetos</p>
+          <p class="threed-description">Animación de personajes y objetos 3D.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-palette"></i>
             <h3>Texturizado</h3>
           </div>
-          <p class="threed-description">Materiales y texturas realistas</p>
+          <p class="threed-description">Creación de materiales y texturas realistas.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-lightbulb"></i>
             <h3>Iluminación</h3>
           </div>
-          <p class="threed-description">Configuración de luces y renderizado</p>
+          <p class="threed-description">Configuración de iluminación y renderizado.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-vr-cardboard"></i>
             <h3>Realidad Virtual</h3>
           </div>
-          <p class="threed-description">Desarrollo VR/AR</p>
+          <p class="threed-description">Desarrollo de experiencias VR/AR.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-gamepad"></i>
             <h3>Videojuegos</h3>
           </div>
-          <p class="threed-description">Assets y entornos 3D</p>
+          <p class="threed-description">Creación de assets para videojuegos.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-drafting-compass"></i>
             <h3>CAD</h3>
           </div>
-          <p class="threed-description">Diseño técnico y arquitectónico</p>
+          <p class="threed-description">Diseño técnico y arquitectónico.</p>
         </div>
-
+        
         <div class="threed-card">
           <div class="threed-header">
             <i class="fas fa-print"></i>
             <h3>Impresión 3D</h3>
           </div>
-          <p class="threed-description">Preparación de modelos para impresión</p>
+          <p class="threed-description">Preparación de modelos para impresión.</p>
         </div>
       </div>
     </div>
@@ -2490,7 +2483,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <section id="contact" class="contact">
     <div class="contact-container">
-      <h2>¿En que puedo ayudarle?</h2>
+      <h2>Contacto</h2>
       <form class="contact-form">
         <div class="form-group">
           <input type="text" id="name" placeholder="Nombre" required>
@@ -2502,7 +2495,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <input type="text" id="subject" placeholder="Asunto" required>
         </div>
         <div class="form-group">
-          <textarea id="message" placeholder="Mensaje" rows="5" required></textarea>
+          <textarea id="message" rows="5" placeholder="Mensaje" required></textarea>
         </div>
         <button type="submit" class="submit-btn">Enviar Mensaje</button>
       </form>
@@ -2510,7 +2503,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
   <footer class="footer">
-    <p>&copy; 2024 Enrique José López Prim. Todos los derechos reservados. <span class="version">v2.1.0</span></p>
+    <p>&copy; 2024 Enrique José López Prim <span class="version">v2.0.0</span></p>
   </footer>
 </body>
 </html>
