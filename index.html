@@ -435,6 +435,24 @@ a {
   text-align: center;
   z-index: 1000;
   animation: slideUp 0.5s ease-out;
+  color: var(--primary); /* This makes the text green */
+}
+
+.cookie-notice button {
+  background-color: var(--primary); /* Green background */
+  color: white; /* White text */
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cookie-notice button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* About Section */
@@ -2188,13 +2206,13 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-docker"></i>
           <div class="software-info">
             <h3>Docker Desktop</h3>
-            <p>Contenedores</p>
+            <p>Contenedorización</p>
           </div>
         </div>
 
         <!-- IntelliJ IDEA -->
         <div class="software-item">
-          <i class="fas fa-coffee"></i>
+          <i class="fas fa-brain"></i>
           <div class="software-info">
             <h3>IntelliJ IDEA</h3>
             <p>Desarrollo Java</p>
@@ -2212,7 +2230,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <!-- Sketch -->
         <div class="software-item">
-          <i class="fas fa-pencil-ruler"></i>
+          <i class="fas fa-pencil-alt"></i>
           <div class="software-info">
             <h3>Sketch</h3>
             <p>Diseño de interfaces</p>
@@ -2224,16 +2242,16 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-infinity"></i>
           <div class="software-info">
             <h3>CI/CD Tools</h3>
-            <p>Jenkins, GitLab CI</p>
+            <p>Integración continua</p>
           </div>
         </div>
 
         <!-- Machine Learning Tools -->
         <div class="software-item">
-          <i class="fas fa-brain"></i>
+          <i class="fas fa-robot"></i>
           <div class="software-info">
             <h3>Machine Learning Tools</h3>
-            <p>TensorFlow, PyTorch</p>
+            <p>IA y ML</p>
           </div>
         </div>
       </div>
@@ -2249,7 +2267,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-html5"></i>
           <div class="software-info">
             <h3>HTML</h3>
-            <p>Desarrollo web</p>
+            <p>Frontend</p>
           </div>
         </div>
 
@@ -2258,7 +2276,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-css3-alt"></i>
           <div class="software-info">
             <h3>CSS</h3>
-            <p>Estilos y diseño</p>
+            <p>Estilos</p>
           </div>
         </div>
 
@@ -2267,7 +2285,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-js"></i>
           <div class="software-info">
             <h3>JavaScript</h3>
-            <p>Frontend y Backend</p>
+            <p>Frontend/Backend</p>
           </div>
         </div>
 
@@ -2276,7 +2294,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-python"></i>
           <div class="software-info">
             <h3>Python</h3>
-            <p>Backend y ML</p>
+            <p>Backend/Data Science</p>
           </div>
         </div>
 
@@ -2285,7 +2303,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-java"></i>
           <div class="software-info">
             <h3>Java</h3>
-            <p>Enterprise</p>
+            <p>Aplicaciones empresariales</p>
           </div>
         </div>
 
@@ -2294,7 +2312,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fab fa-php"></i>
           <div class="software-info">
             <h3>PHP</h3>
-            <p>Web Development</p>
+            <p>Desarrollo web</p>
           </div>
         </div>
 
@@ -2303,7 +2321,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-gem"></i>
           <div class="software-info">
             <h3>Ruby</h3>
-            <p>Web y Scripts</p>
+            <p>Desarrollo web</p>
           </div>
         </div>
 
@@ -2313,15 +2331,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="software-info">
             <h3>C#</h3>
             <p>.NET Development</p>
-          </div>
-        </div>
-
-        <!-- C++ -->
-        <div class="software-item">
-          <i class="fas fa-plus-circle"></i>
-          <div class="software-info">
-            <h3>C++</h3>
-            <p>Systems Development</p>
           </div>
         </div>
 
@@ -2357,25 +2366,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-cloud"></i>
           <div class="software-info">
             <h3>Go</h3>
-            <p>Cloud y Sistemas</p>
-          </div>
-        </div>
-
-        <!-- Kotlin -->
-        <div class="software-item">
-          <i class="fab fa-android"></i>
-          <div class="software-info">
-            <h3>Kotlin</h3>
-            <p>Android y Backend</p>
-          </div>
-        </div>
-
-        <!-- Rust -->
-        <div class="software-item">
-          <i class="fas fa-cogs"></i>
-          <div class="software-info">
-            <h3>Rust</h3>
-            <p>Systems Development</p>
+            <p>Cloud Development</p>
           </div>
         </div>
       </div>
@@ -2400,7 +2391,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-shield-alt"></i>
           <div class="software-info">
             <h3>Security</h3>
-            <p>Seguridad de red</p>
+            <p>Seguridad informática</p>
           </div>
         </div>
 
@@ -2409,7 +2400,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-server"></i>
           <div class="software-info">
             <h3>Servers</h3>
-            <p>Administración</p>
+            <p>Administración de servidores</p>
           </div>
         </div>
 
@@ -2427,16 +2418,16 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-cloud"></i>
           <div class="software-info">
             <h3>Cloud Computing</h3>
-            <p>AWS, Azure, GCP</p>
+            <p>Computación en la nube</p>
           </div>
         </div>
 
         <!-- Routing & Switching -->
         <div class="software-item">
-          <i class="fas fa-route"></i>
+          <i class="fas fa-random"></i>
           <div class="software-info">
             <h3>Routing & Switching</h3>
-            <p>Infraestructura</p>
+            <p>Enrutamiento y conmutación</p>
           </div>
         </div>
 
@@ -2445,16 +2436,16 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-user-shield"></i>
           <div class="software-info">
             <h3>Cybersecurity</h3>
-            <p>Seguridad informática</p>
+            <p>Ciberseguridad</p>
           </div>
         </div>
 
         <!-- VPN -->
         <div class="software-item">
-          <i class="fas fa-key"></i>
+          <i class="fas fa-globe-americas"></i>
           <div class="software-info">
             <h3>VPN</h3>
-            <p>Redes privadas</p>
+            <p>Redes privadas virtuales</p>
           </div>
         </div>
 
@@ -2463,44 +2454,44 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-hdd"></i>
           <div class="software-info">
             <h3>Backup Systems</h3>
-            <p>Copias de seguridad</p>
+            <p>Sistemas de respaldo</p>
           </div>
         </div>
 
         <!-- Virtualization -->
         <div class="software-item">
-          <i class="fas fa-cube"></i>
+          <i class="fas fa-box"></i>
           <div class="software-info">
             <h3>Virtualization</h3>
-            <p>VMware, VirtualBox</p>
+            <p>Virtualización</p>
           </div>
         </div>
 
         <!-- Infrastructure as Code -->
         <div class="software-item">
-          <i class="fas fa-code-branch"></i>
+          <i class="fas fa-code"></i>
           <div class="software-info">
             <h3>Infrastructure as Code</h3>
-            <p>Terraform, Ansible</p>
+            <p>Infraestructura como código</p>
           </div>
         </div>
-
-        <!-- Docker & Containers -->
+        
+        <!-- Software de Monitorización -->
         <div class="software-item">
-          <i class="fab fa-docker"></i>
+          <i class="fas fa-chart-line"></i>
           <div class="software-info">
-            <h3>Docker & Containers</h3>
-            <p>Containerización</p>
+            <h3>Software de Monitorización</h3>
+            <p>Monitorización de sistemas</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="threed" class="software">
+  <section id="threed" class="threed">
     <div class="threed-container">
-      <h2>3D y Modelado</h2>
-      <div class="threed-grid software-grid">
+      <h2>3D y Gráficos</h2>
+      <div class="software-grid">
         <!-- Modelado 3D -->
         <div class="software-item">
           <i class="fas fa-cube"></i>
@@ -2515,7 +2506,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-film"></i>
           <div class="software-info">
             <h3>Animación</h3>
-            <p>Animación 3D</p>
+            <p>Animación 3D y Motion Graphics</p>
           </div>
         </div>
 
@@ -2524,7 +2515,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-palette"></i>
           <div class="software-info">
             <h3>Texturizado</h3>
-            <p>Substance Painter</p>
+            <p>Substance Painter, Mari</p>
           </div>
         </div>
 
@@ -2533,7 +2524,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-lightbulb"></i>
           <div class="software-info">
             <h3>Iluminación</h3>
-            <p>Iluminación 3D</p>
+            <p>Iluminación y renderizado</p>
           </div>
         </div>
 
@@ -2542,7 +2533,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-photo-video"></i>
           <div class="software-info">
             <h3>Renderizado</h3>
-            <p>V-Ray, Arnold</p>
+            <p>V-Ray, Arnold, Cycles</p>
           </div>
         </div>
 
@@ -2551,7 +2542,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-vr-cardboard"></i>
           <div class="software-info">
             <h3>Realidad Virtual</h3>
-            <p>Unity, Unreal</p>
+            <p>Unity, Unreal Engine</p>
           </div>
         </div>
 
@@ -2560,7 +2551,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-brush"></i>
           <div class="software-info">
             <h3>Esculpido Digital</h3>
-            <p>ZBrush</p>
+            <p>ZBrush, Mudbox</p>
           </div>
         </div>
 
@@ -2569,7 +2560,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-magic"></i>
           <div class="software-info">
             <h3>Efectos Especiales</h3>
-            <p>Houdini, FumeFX</p>
+            <p>Houdini, Nuke</p>
           </div>
         </div>
 
@@ -2578,7 +2569,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-vector-square"></i>
           <div class="software-info">
             <h3>UV Unwrapping</h3>
-            <p>UVLayout</p>
+            <p>UVLayout, RizomUV</p>
           </div>
         </div>
 
@@ -2587,7 +2578,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-running"></i>
           <div class="software-info">
             <h3>Motion Capture</h3>
-            <p>Mocap y animación</p>
+            <p>Captura de movimiento</p>
           </div>
         </div>
 
@@ -2596,7 +2587,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-bone"></i>
           <div class="software-info">
             <h3>Rigging</h3>
-            <p>Esqueletos 3D</p>
+            <p>Sistemas de huesos</p>
           </div>
         </div>
 
@@ -2605,7 +2596,122 @@ document.addEventListener('DOMContentLoaded', function() {
           <i class="fas fa-layer-group"></i>
           <div class="software-info">
             <h3>Compositing</h3>
-            <p>Nuke, After Effects</p>
+            <p>After Effects, Fusion</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai" class="software">
+    <div class="software-container">
+      <h2>Inteligencia Artificial</h2>
+      <div class="software-grid">
+        <!-- Machine Learning -->
+        <div class="software-item">
+          <i class="fas fa-brain"></i>
+          <div class="software-info">
+            <h3>Machine Learning</h3>
+            <p>TensorFlow, PyTorch</p>
+          </div>
+        </div>
+
+        <!-- Deep Learning -->
+        <div class="software-item">
+          <i class="fas fa-network-wired"></i>
+          <div class="software-info">
+            <h3>Deep Learning</h3>
+            <p>Redes neuronales profundas</p>
+          </div>
+        </div>
+
+        <!-- NLP -->
+        <div class="software-item">
+          <i class="fas fa-language"></i>
+          <div class="software-info">
+            <h3>NLP</h3>
+            <p>Procesamiento del lenguaje natural</p>
+          </div>
+        </div>
+
+        <!-- Computer Vision -->
+        <div class="software-item">
+          <i class="fas fa-eye"></i>
+          <div class="software-info">
+            <h3>Computer Vision</h3>
+            <p>OpenCV, YOLO</p>
+          </div>
+        </div>
+
+        <!-- Reinforcement Learning -->
+        <div class="software-item">
+          <i class="fas fa-robot"></i>
+          <div class="software-info">
+            <h3>Reinforcement Learning</h3>
+            <p>Aprendizaje por refuerzo</p>
+          </div>
+        </div>
+
+        <!-- Neural Networks -->
+        <div class="software-item">
+          <i class="fas fa-project-diagram"></i>
+          <div class="software-info">
+            <h3>Neural Networks</h3>
+            <p>Redes neuronales</p>
+          </div>
+        </div>
+
+        <!-- Big Data Analytics -->
+        <div class="software-item">
+          <i class="fas fa-database"></i>
+          <div class="software-info">
+            <h3>Big Data Analytics</h3>
+            <p>Spark, Hadoop</p>
+          </div>
+        </div>
+
+        <!-- Robotics AI -->
+        <div class="software-item">
+          <i class="fas fa-robot"></i>
+          <div class="software-info">
+            <h3>Robotics AI</h3>
+            <p>ROS, PyRobot</p>
+          </div>
+        </div>
+
+        <!-- Expert Systems -->
+        <div class="software-item">
+          <i class="fas fa-cogs"></i>
+          <div class="software-info">
+            <h3>Expert Systems</h3>
+            <p>Sistemas expertos</p>
+          </div>
+        </div>
+
+        <!-- Genetic Algorithms -->
+        <div class="software-item">
+          <i class="fas fa-dna"></i>
+          <div class="software-info">
+            <h3>Genetic Algorithms</h3>
+            <p>Algoritmos genéticos</p>
+          </div>
+        </div>
+
+        <!-- Speech Recognition -->
+        <div class="software-item">
+          <i class="fas fa-microphone"></i>
+          <div class="software-info">
+            <h3>Speech Recognition</h3>
+            <p>Reconocimiento de voz</p>
+          </div>
+        </div>
+
+        <!-- Predictive Analytics -->
+        <div class="software-item">
+          <i class="fas fa-chart-line"></i>
+          <div class="software-info">
+            <h3>Predictive Analytics</h3>
+            <p>Análisis predictivo</p>
           </div>
         </div>
       </div>
@@ -2623,6 +2729,9 @@ document.addEventListener('DOMContentLoaded', function() {
           <input type="email" placeholder="Email" required>
         </div>
         <div class="form-group">
+          <input type="text" placeholder="Asunto" required>
+        </div>
+        <div class="form-group">
           <textarea placeholder="Mensaje" rows="5" required></textarea>
         </div>
         <button type="submit" class="submit-btn">Enviar Mensaje</button>
@@ -2631,7 +2740,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
   <footer class="footer">
-    <p>&copy; 2023 Enrique José López Prim - v3.7.2</p>
+    <p>© 2024 Enrique José López Prim | Versión 3.7.2</p>
   </footer>
 </body>
 </html>
